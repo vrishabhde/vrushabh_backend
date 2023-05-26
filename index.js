@@ -14,15 +14,20 @@
 // app.listen(3000);
 
 
-import express from "express";
+// import express from "express";
 
-import morgan from "morgan";
-import router from "./routes/user_routes.js";
+// import morgan from "morgan";
+// import router from "./routes/user_routes.js";
 
-const app = express();
+// const app = express();
 
 app.use(morgan('dev'));
 app.use(express.json());
 app.use("/api/v1", router);
 
+mongoose.connect('mongodb+srv://vrushabhde:vrushabh.12345@cluster0.tnxk0aj.mongodb.nety/')
+.then(() => console.log("Db connected"))
+.catch((err)) =>  
 app.listen(8000);
+
+
